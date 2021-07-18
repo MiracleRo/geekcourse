@@ -39,7 +39,6 @@ class Request {
       connection.on('data', (data) => {
         parser.receive(data.toString())
         if (parser.isFinished) {
-          console.log(1111)
           resolve(parser.response)
         }
         connection.end()
